@@ -1,4 +1,4 @@
-# TestPayment
+# SkillsFuture Credit (SFC) Payment Gateway Services
 SFC Payment Gateway Request
 
 
