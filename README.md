@@ -37,7 +37,7 @@ Additionally, the successful submission of claims by users is dependent on the c
 
 
 
-STEP 1 – CREATING THE REQUEST PAYLOAD
+<b>STEP 1 – CREATING THE REQUEST PAYLOAD</b>
 
 ![](img/payment_processS1.png?raw=true "Payment Flow")
 
@@ -61,7 +61,6 @@ FIELD ATTRIBUTES
 |Additional Info|N|String/512|For Training Provider's reference|
 
 \* Note that for the initial claim request, contact information shared by the e-Service will be pre-populated if the user has not transacted with SSG/WSG before.
-
 
 SAMPLE INITIAL CLAIM REQUEST PAYLOAD BEFORE ENCRYPTION<code><pre>{
 	"nric":" S98xxx71J",
