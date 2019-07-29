@@ -38,3 +38,42 @@ Additionally, the successful submission of claims by users is dependent on the c
 
 
 STEP 1 – CREATING THE REQUEST PAYLOAD
+
+![](img/payment_processS1.png?raw=true "Payment Flow")
+
+With the SFC Payment Gateway, users will be redirected to the payment page for an option to utilise their credit to offset against their course fees. e-Services must prepare a set of information, known as the payload, that is required by SSG to validate the user’s request to use their SFC.
+The following sections will provide technical information regarding the requirements of the request payload. 
+
+	FIELD ATTRIBUTES
+ 
+|Parameters|Mandatory|Type/Length|Description|
+|--- |--- |--- |--- |
+|NRIC|Y|String/9|To validate if the same NRIC is used for SingPass login|
+|Mobile Number*|N|String/8|To pre-populate in contact details in SFC Payment Gateway only if the information is not available|
+|Home Number*|N|String/8||
+|Email Address*|N|String/241||
+|TP UEN|Y|String/10|UEN of the Training Provider|
+|Source ID|Y|String/6|To be provided to respective e-Services during onboarding. The source ID will be unique to each Training Provider/e-Service|
+|Course ID|Y|String/50|External course reference number|
+|Course Run ID|N|String/50|External course run reference number|
+|Course Start Date|Y|String/10|Start date of the registered course. The format must be: yyyy-mm-dd|
+|Course Fee Payable|Y|String/9|Net amount (including GST) of the course to validate against SFC Payment amount. The format must be to 2 decimal placing|
+|Additional Info|N|String/512|For Training Provider's reference|
+
+\* Note that for the initial claim request, contact information shared by the e-Service will be pre-populated if the user has not transacted with SSG/WSG before.
+
+
+	SAMPLE INITIAL CLAIM REQUEST PAYLOAD BEFORE ENCRYPTION
+<code><pre>{
+"nric":" S98xxx71J",
+"mobileno":"12345678",
+"homeno":"87654321",
+"email":"abc@yahoo.com",
+"uen":"19830XXX0C",
+"sourceId":"xxx0001",
+"courseID":"Fengshan 163",
+"courseRunId":"",
+"courseStartDate":"2018-02-10",
+"courseFee":"50.2",
+"addInfo":"This is additional information"
+}</pre></code>
