@@ -46,6 +46,7 @@ With the SFC Payment Gateway, users will be redirected to the payment page for a
 The following sections will provide technical information regarding the requirements of the request payload. 
 
 FIELD ATTRIBUTES
+
 |Parameters|Mandatory|Type/Length|Description|
 |--- |--- |--- |--- |
 |NRIC|Y|String/9|To validate if the same NRIC is used for SingPass login|
