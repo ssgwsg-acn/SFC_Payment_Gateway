@@ -14,7 +14,7 @@ The figure below shows a summary of the process and the steps to be taken by e-S
 ![](img/payment_process.png?raw=true "Payment Flow")
 
 
- 	Step 1 – Creating the Request Payload
+ ###Step 1 – Creating the Request Payload
 The e-Service will create a request payload, which comprises of information (e.g. Course Start Date and Course Fee) that is necessary for SSG to allow the user to use their SkillsFuture Credit.
 
  	Step 2 – Calling the Encryption API
