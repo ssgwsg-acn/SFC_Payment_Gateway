@@ -12,8 +12,9 @@ Guidelines and interface specifications to the SkillsFuture Credit (SFC) Payment
 The SFC Payment Gateway provides users with the opportunity to use their SFC at the point of registration for the course. During the registration process, users will be redirected to the SFC Payment Gateway to indicate the amount of credit they would like to use to offset their payment. 
 The figure below shows a summary of the process and the steps to be taken by e-Services
 
-![](img/payment_process.png?raw=true "Payment Flow")
-
+<p align="center">
+  <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_process.png">
+</p>
 
  #### Step 1 – Creating the Request Payload
 The e-Service will create a request payload, which comprises of information (e.g. Course Start Date and Course Fee) that is necessary for SSG to allow the user to use their SkillsFuture Credit.
@@ -41,7 +42,7 @@ Additionally, the successful submission of claims by users is dependent on the c
 <b>STEP 1 – CREATING THE REQUEST PAYLOAD</b>
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_process.png">
+  <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_process.png">
 </p>
 
 With the SFC Payment Gateway, users will be redirected to the payment page for an option to utilise their credit to offset against their course fees. e-Services must prepare a set of information, known as the payload, that is required by SSG to validate the user’s request to use their SFC.
