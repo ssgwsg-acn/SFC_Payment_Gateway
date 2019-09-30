@@ -40,7 +40,9 @@ Additionally, the successful submission of claims by users is dependent on the c
 
 <b>STEP 1 – CREATING THE REQUEST PAYLOAD</b>
 
-<center>![](img/payment_processS1.png?raw=true "Payment Flow")</center>
+<p align="center">
+  ![](img/payment_processS1.png?raw=true "Payment Flow")
+</p>
 
 With the SFC Payment Gateway, users will be redirected to the payment page for an option to utilise their credit to offset against their course fees. e-Services must prepare a set of information, known as the payload, that is required by SSG to validate the user’s request to use their SFC.
 The following sections will provide technical information regarding the requirements of the request payload. 
