@@ -1,7 +1,5 @@
 
 # SkillsFuture Credit (SFC) Payment Gateway Services
-SFC Payment Gateway Request
-
 
 Guidelines and interface specifications to the SkillsFuture Credit (SFC) Payment Gateway. This document is intended for the following users from Training Providers (TPs) for their e-Services:
 
