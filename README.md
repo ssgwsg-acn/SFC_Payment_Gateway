@@ -16,7 +16,7 @@ The figure below shows a summary of the process and the steps to be taken by e-S
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_process.png">
 </p>
 
- #### Step 1 – Creating the Request Payload
+#### Step 1 – Creating the Request Payload
 The e-Service will create a request payload, which comprises of information (e.g. Course Start Date and Course Fee) that is necessary for SSG to allow the user to use their SkillsFuture Credit.
 
 #### Step 2 – Calling the Encryption API
@@ -42,7 +42,7 @@ Additionally, the successful submission of claims by users is dependent on the c
 <b>STEP 1 – CREATING THE REQUEST PAYLOAD</b>
 
 <p align="center">
-  <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_process.png">
+  <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS1.png">
 </p>
 
 With the SFC Payment Gateway, users will be redirected to the payment page for an option to utilise their credit to offset against their course fees. e-Services must prepare a set of information, known as the payload, that is required by SSG to validate the user’s request to use their SFC.
@@ -64,9 +64,14 @@ FIELD ATTRIBUTES
 
 \* Note that for the initial claim request, contact information shared by the e-Service will be pre-populated if the user has not transacted with SSG/WSG before.
 
-
 <b>STEP 2 – CALLING THE ENCRYPTION API</b>
-From the information gathered in Step 1, the e-Service should map the information to the structure given below and call the encryption API.
+
+<p align="center">
+  <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS2.png">
+</p>
+
+To cater for increased security and confidentiality of data, all data must be encrypted before being transferred to and from government organisations. Given that the request payload will contain sensitive information (such as NRIC), the request payload must be encrypted before being submitted to SSG. At the same time, encryption ensures the integrity of the data transactions between systems since they are sent using trusted certificates. 
+From the details gathered in Step 1, the e-Service should map the information to the structure given below and call the encryption API.
 ```
 {
     "claimRequest": {
@@ -86,3 +91,11 @@ From the information gathered in Step 1, the e-Service should map the informatio
     }  
 }
 ```
+
+<b>STEP 3 – SENDING THE ENCRYPTED REQUEST</b>
+
+<p align="center">
+  <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS3.png">
+</p>
+
+After encrypting the request payload, the e-Service should send the encrypted payload to the SFC Payment Gateway via a form post. This would allow the SFC Payment Gateway to receive the necessary information and continue the user’s application to submit SFC claims. 
