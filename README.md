@@ -82,7 +82,32 @@ After encrypting the request payload, the e-Service should send the encrypted pa
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS4.png">
 </p>
 
-After the user has completed the SFC claim process, the user will be redirected back to the e-Service, together with an encrypted response payload. The e-Service should then call the decryption API to decrypt the encrypted response. The decryption API will return a JSON object as mentioned in the [swagger](https://developer.ssg-wsg.sg/webapp/docs/product/7KU1xrpxljJZnsIkJP6QNF/group/2RTLOUTuE3Dkgf7MOdn0Cm#).
+After the user has completed the SFC claim process, the user will be redirected back to the e-Service, together with an encrypted response payload. The e-Service should then call the decryption API to decrypt the encrypted response. The decryption API details are available in the [swagger](https://developer.ssg-wsg.sg/webapp/docs/product/7KU1xrpxljJZnsIkJP6QNF/group/2RTLOUTuE3Dkgf7MOdn0Cm#). The response of the decryption API will look like:
+```
+{
+  "status": 200,
+  "data": {
+    "claimRequestStatus": {
+      "transactionStatus": "X",
+      "individual": {
+        "nric": "T5001072J"
+      },
+      "course": {
+        "id": "STMI-CS-CSXY",
+        "runId": "C123",
+        "startDate": "2019-05-22"
+      },
+      "claim": {
+        "id": "2000217512",
+        "amount": "1.0",
+        "date": "2019-09-13"
+      },
+      "additionalInformation": "This is additional information"
+    }
+  },
+  "errors": []
+}
+```
 
 #### Step 5 – Reading the Response Payload
 <p align="center">
@@ -98,5 +123,4 @@ The e-Service will read the response payload after decryption. The response payl
 
 The e-Service will upload supporting documents to SSG to support the SFC claim by the user. The e-Service may also choose to view or cancel the user’s claim. All these functionalities are made available as APIs to the consuming e-Services.
 
-Do note that this process is applicable for every user transaction and will be performed automatically by the system. The different steps will be further detailed and explained in the subsequent sections.
-Additionally, the successful submission of claims by users is dependent on the completion of payment and the upload of supporting documents. All claim submissions are subjected to approval by SSG.<br><br>
+The successful submission of claims by users is dependent on the completion of payment and the upload of supporting documents. All claim submissions are subjected to approval by SSG.<br><br>
