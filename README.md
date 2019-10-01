@@ -35,7 +35,7 @@ FIELD ATTRIBUTES
 |Course Run ID|N|String/50|External course run reference number|
 |Course Start Date|Y|String/10|Start date of the registered course. The format must be: yyyy-mm-dd|
 |Course Fee Payable|Y|String/9|Net amount (including GST) of the course to validate against SFC Payment amount. The format must be to 2 decimal placing|
-|Additional Info|N|String/512|For Training Provider's reference|
+|Additional Information|N|String/512|For Training Provider's reference|
 
 \* Note that for the initial claim request, contact information shared by the e-Service will be pre-populated if the user has not transacted with SSG/WSG before.
 
