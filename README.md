@@ -16,10 +16,10 @@ The figure below shows a summary of the process and the steps to be taken by e-S
 
 #### STEP 1 - CREATING THE REQUEST PAYLOAD
 The e-Service will create a request payload, which comprises of information (e.g. Course Start Date and Course Fee) that is necessary for SSG to allow the user to use their SkillsFuture Credit.
-<p align="center" style="display: flex;justify-content: center;flex-direction: column;font-style: italic;">
+<p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS1.png">
-  Figure 1: Creating the request payload
 </p>
+*Figure 1: Creating the request payload*
 
 With the SFC Payment Gateway, users will be redirected to the payment page for an option to utilise their credit to offset against their course fees. e-Services must prepare a set of information, known as the payload, that is required by SSG to validate the user’s request to use their SFC.
 The following sections will provide technical information regarding the requirements of the request payload. 
