@@ -109,14 +109,14 @@ After the user has completed the SFC claim process, the user will be redirected 
 }
 ```
 
-#### Step 5 – Reading the Response Payload
+#### Step 5 – READING THE RESPONSE PAYLOAD
 <p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS5.png">
 </p>
 
 The e-Service will read the response payload after decryption. The response payload comprises of information that is necessary for the e-Service to continue the registration process with the user and continue the payment process for any outstanding amount.
 
-#### Step 6 – Consuming APIs for further processing
+#### Step 6 – CONSUMING APIs FOR FURTHER PROCESSING
 <p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS6.png">
 </p>
