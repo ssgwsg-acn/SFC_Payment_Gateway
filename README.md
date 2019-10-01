@@ -19,7 +19,6 @@ The e-Service will create a request payload, which comprises of information (e.g
 <p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS1.png">
 </p>
-*Figure 1: Creating the request payload*
 
 With the SFC Payment Gateway, users will be redirected to the payment page for an option to utilise their credit to offset against their course fees. e-Services must prepare a set of information, known as the payload, that is required by SSG to validate the user’s request to use their SFC.
 The following sections will provide technical information regarding the requirements of the request payload. 
@@ -43,12 +42,8 @@ FIELD ATTRIBUTES
 #### STEP 2 – CALLING THE ENCRYPTION API
 To cater for increased security and confidentiality of data, all data must be encrypted before being transferred to and from government organisations. Given that the request payload will contain sensitive information (such as NRIC), the request payload must be encrypted before being submitted to SSG. At the same time, encryption ensures the integrity of the data transactions between systems since they are sent using trusted certificates.
 
-<p align="center" style="display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-style: italic;">
+<p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS2.png">
-  Figure 2: Call the Encryption API
 </p>
 
 Once the e-Service has the required information, it can map the details to the encryption API request. The details about the encryption API are available in the [swagger](https://developer.ssg-wsg.sg/webapp/docs/product/7KU1xrpxljJZnsIkJP6QNF/group/2RTLOUTuE3Dkgf7MOdn0Cm#).The API will then encrypt the request payload using Trust Certificates provided by SSG. This is to ensure that the data transfer between the e-Service and SSG is secure and all information is kept confidential.
@@ -74,23 +69,15 @@ From the details gathered in Step 1, the e-Service should map the information to
 ```
 
 #### STEP 3 – SENDING THE ENCRYPTED REQUEST
-<p align="center" style="display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-style: italic;">
+<p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS3.png">
-  Figure 3: Send the request via form post
 </p>
 
 After encrypting the request payload, the e-Service should send the encrypted payload to the SFC Payment Gateway via a form post. This would allow the SFC Payment Gateway to receive the necessary information and continue the user’s application to submit SFC claims. 
 
 #### STEP 4 – DECRYPTING THE ENCRYPTED RESPONSE
-<p align="center" style="display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-style: italic;">
+<p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS4.png">
-  Figure 4: Call the Decryption API
 </p>
 
 After the user has completed the SFC claim process, the user will be redirected back to the e-Service, together with an encrypted response payload. The e-Service should then call the decryption API to decrypt the encrypted response. The decryption API details are available in the [swagger](https://developer.ssg-wsg.sg/webapp/docs/product/7KU1xrpxljJZnsIkJP6QNF/group/2RTLOUTuE3Dkgf7MOdn0Cm#). The response of the decryption API will look like:
@@ -121,23 +108,15 @@ After the user has completed the SFC claim process, the user will be redirected 
 ```
 
 #### Step 5 – READING THE RESPONSE PAYLOAD
-<p align="center" style="display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-style: italic;">
+<p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS5.png">
-  Figure 5: Read the response payload
 </p>
 
 The e-Service will read the response payload after decryption. The response payload comprises of information that is necessary for the e-Service to continue the registration process with the user and continue the payment process for any outstanding amount.
 
 #### Step 6 – CONSUMING APIs FOR FURTHER PROCESSING
-<p align="center" style="display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-style: italic;">
+<p align="center">
   <img src="https://github.com/ssgwsg-acn/TestPayment/raw/master/img/payment_processS6.png">
-  Figure 6: Call APIs for further processing
 </p>
 
 The e-Service will upload supporting documents to SSG to support the SFC claim by the user. The e-Service may also choose to view or cancel the user’s claim. All these functionalities are made available as APIs to the consuming e-Services.
